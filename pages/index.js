@@ -1,6 +1,63 @@
 import styled from "styled-components";
 import { useWeb3 } from "@3rdweb/hooks";
+import Dashboard from "./Dashboard";
 
 export default function Home() {
-  return <div>hello</div>;
+  const { address, connectWallet } = useWeb3();
+
+  return (
+    <Wrapper>
+      {address ? (
+        <Dashboard address={address} />
+      ) : (
+        <WalletConnect>
+          <Button onClick={() => connectWallet("injected")}>
+            Connect Wallet
+          </Button>
+          <Details>
+            You need Chrome to be <br /> able to run this app
+          </Details>
+        </WalletConnect>
+      )}
+    </Wrapper>
+  );
 }
+
+const Wrapper = styled.div`
+  dispaly: flex;
+  height: 100vh;
+  max-width: 100vw;
+  background-color: #0a0b0d;
+  color: white;
+  display: grid;
+  place-items: center;
+`;
+
+const WalletConnect = styled.div`
+  dispaly: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Button = styled.div`
+  border: 1px solid #282b2f;
+  text-align: center;
+  padding: 0.8rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  border-radius: 0.4rem;
+  background-color: #3773f5;
+  color: black;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+const Details = styled.div`
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #282b2f;
+  text-align: center;
+  margin-top: 1rem;
+`;
