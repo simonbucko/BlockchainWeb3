@@ -24,7 +24,7 @@ export default function Home() {
 }
 
 const Wrapper = styled.div`
-  dispaly: flex;
+  display: flex;
   height: 100vh;
   max-width: 100vw;
   background-color: #0a0b0d;
