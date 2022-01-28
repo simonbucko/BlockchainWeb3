@@ -7,3 +7,15 @@ const Dashboard = ({ address }) => {
 };
 
 export default Dashboard;
+
+const Wrapper = styled.div`
+  dispaly: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #0a0b0d;
+  color: white;
+`;
+
+const MainContainer = styled.div`
+  flex: 1;
+`;
