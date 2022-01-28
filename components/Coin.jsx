@@ -3,8 +3,20 @@ import styled from "styled-components";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import Image from "next/image";
 
-const Coin = () => {
-  return <div></div>;
+const Coin = ({ coin }) => {
+  return (
+    <Wrapper>
+      <div>
+        <div style={{ flex: 3 }}>
+          <NameCol>
+            <CoinIcon>
+              <Image src={coin.logo} alt={coin.name}></Image>
+            </CoinIcon>
+          </NameCol>
+        </div>
+      </div>
+    </Wrapper>
+  );
 };
 
 export default Coin;
@@ -29,8 +41,8 @@ const NameCol = styled.div`
 `;
 
 const CoinIcon = styled.div`
-  widthL 1.8rem;
-  margin-right: 1rem
+  width: 1.8rem;
+  margin-right: 1rem;
 `;
 
 const Primary = styled.div`
