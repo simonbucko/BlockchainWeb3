@@ -1,3 +1,4 @@
 used sanity as db that is also used by figma
 run "sanity start" to start a localDB
 used thirdweb to create own coins
+restart the server if the page sa zjebuje

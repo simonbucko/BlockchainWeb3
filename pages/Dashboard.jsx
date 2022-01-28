@@ -3,7 +3,13 @@ import Header from "../components/Header";
 import styled from "styled-components";
 
 const Dashboard = ({ address }) => {
-  return <Header />;
+  return (
+    <Wrapper>
+      <MainContainer>
+        <Header />
+      </MainContainer>
+    </Wrapper>
+  );
 };
 
 export default Dashboard;
